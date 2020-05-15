@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+   <html>
+    <head>
+    <title>ChemoCountdown</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Overpass+Mono&display=swap" rel="stylesheet">
+    <style>
+        * {
+            background-color: black;
+        }
+
+        p {
+            text-align: center;
+            font-size: 90px;
+            margin-top 20px;
+            background-color: black;
+            color: white;
+            font-family: 'Overpass Mono', sans-serif;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <p>
+        ChemoCountdown(CC)
+    </p>
+
+    <p id="demo"></p>
+
+    <script>
+        var countDownDate = new Date("Jul 28,2020 10:30:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var delta = countDownDate - now;
+
+            var days = Math.floor(delta / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((delta % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((delta % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((delta % (1000 * 60)) / 1000);
+            
+
+            document.getElementById("demo").innerHTML = days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+
+
+            if (delta < 0) {
+
+                clearInterval(x);
+                document.getElementById("demo").innerHTML = "EXPIRED"
+            }
+
+
+
+        }, 100);
+    </script>
+
+    <p>Stunden:</p>
+    <p id="Stu"></p>
+
+    <script>
+        var countDownDate = new Date("Jul 28,2020 10:30:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var delta = countDownDate - now;
+
+
+            var Stu = Math.floor(delta / (1000 * 60 * 60));
+
+            document.getElementById("Stu").innerHTML = Stu + "h";
+
+
+
+            if (delta < 0) {
+
+                clearInterval(x);
+                document.getElementById("Stu").innerHTML = "EXPIRED"
+            }
+
+
+
+        }, 1);
+    </script>
+
+    <p>Minuten:</p>
+    <p id="min"></p>
+
+    <script>
+        var countDownDate = new Date("Jul 28,2020 10:30:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var delta = countDownDate - now;
+
+
+            var min = Math.floor(delta / 60000);
+
+            document.getElementById("min").innerHTML = min + "min";
+
+
+
+            if (delta < 0) {
+
+                clearInterval(x);
+                document.getElementById("min").innerHTML = "EXPIRED"
+            }
+
+
+
+        }, 1000);
+    </script>
+
+    <p>Sekunden:</p>
+    <p id="sec"></p>
+
+    <script>
+        var countDownDate = new Date("Jul 28,2020 10:30:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var delta = countDownDate - now;
+
+
+            var sec = Math.floor(delta / 1000);
+
+            document.getElementById("sec").innerHTML = sec + "s";
+
+
+
+            if (delta < 0) {
+
+                clearInterval(x);
+                document.getElementById("sec").innerHTML = "EXPIRED"
+            }
+
+
+
+        }, 1000);
+    </script>
+
+    <p>Millisekunen:</p>
+    <p id="Ms"></p>
+
+    <script>
+        var countDownDate = new Date("Jul 28,2020 10:30:00").getTime();
+        var x = setInterval(function() {
+            var now = new Date().getTime();
+            var delta = countDownDate - now;
+
+
+            var msec = Math.floor(delta);
+
+            document.getElementById("Ms").innerHTML = msec + "ms";
+
+
+
+            if (delta < 0) {
+
+                clearInterval(x);
+                document.getElementById("sec").innerHTML = "EXPIRED"
+            }
+
+
+
+        }, 1);
+    </script>
+
+
+
+</body></html>
